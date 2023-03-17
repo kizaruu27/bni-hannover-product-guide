@@ -10,10 +10,11 @@ public class TriggerEvent : MonoBehaviour
     public UnityEvent OnTriggerEvent;
     public UnityEvent OnTriggerExitEvent;
 
-    private void OnTriggerEnter(Collider col)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (col.tag == targetCollider)
-            OnTriggerEvent?.Invoke();
+        if (other.tag == targetCollider)
+            OnTriggerEvent.Invoke();
     }
 
     private void OnTriggerExit(Collider col)

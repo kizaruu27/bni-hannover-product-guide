@@ -7,11 +7,17 @@ using UnityEngine;
 public class DescriptionUIHandler : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI descriptionText;
+    [SerializeField] private Animator anim;
 
-    private void Start()
+    private void OnEnable()
     {
-        gameObject.SetActive(false);
+        anim.Play("Pop Up_Anim");
     }
+
+    // private void Start()
+    // {
+    //     gameObject.SetActive(false);
+    // }
 
     public void SetDescription(string desc)
     {
